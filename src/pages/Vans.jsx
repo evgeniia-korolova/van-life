@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Vans = () => {
   const [vans, setVans] = useState([]);
@@ -14,42 +15,20 @@ const Vans = () => {
 
   console.log(vans);
 
-  /*
-  0
-: 
-description
-: 
-"The Modest Explorer is a van designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!"
-id
-: 
-"1"
-imageUrl
-: 
-"https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png"
-name
-: 
-"Modest Explorer"
-price
-: 
-60
-type
-: 
-"simple"
-
-  */
-
   const vansElements = vans.map((van) => {
     return (
-      <div className="van-tile" key={van.id}>
-        <img src={van.imageUrl} />
-        <div className="van-info">
-          <h2>{van.name} </h2>
-          <h2>
-            {van.price} <span>/day</span>{" "}
-          </h2>
+      <Link to={`/vans/${van.id}`} key={van.id}>
+        <div className="van-tile" >
+          <img src={van.imageUrl} />
+          <div className="van-info">
+            <h2>{van.name} </h2>
+            <h2>
+              {van.price} <span>/day</span>{" "}
+            </h2>
+          </div>
+          <i className={`van-type ${van.type} selected`}>{van.type} </i>
         </div>
-        <i className={`van-type ${van.type} selected`}>{van.type} </i>
-      </div>
+      </Link>
     );
   });
   return (
