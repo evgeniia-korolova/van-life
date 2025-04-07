@@ -19,6 +19,12 @@ ul {
   list-style: none;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 /*** HOME PAGE ***/
 .home-container {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
@@ -224,4 +230,36 @@ ul {
   background-color: #ff8c38;
   color: white;
   font-size: 1.125rem;
+}
+
+/* host */
+
+.host-nav {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.host-nav a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.host-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.footer { 
+  margin-top: auto;
+  padding-block: 2rem;
+  background-color: #252525;
+  color: #AAAAAA;
+  width: 100vw;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
 }
