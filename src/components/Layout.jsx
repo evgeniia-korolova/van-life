@@ -4,6 +4,7 @@ import Header from "./Header/Header";
 import Footer from "./Footer";
 
 const Layout = () => {
+  
   return (
     <div className="wrapper">
       <Header />

@@ -24,3 +24,7 @@
     line-height: 1.43;
     color: #4D4D4D;
 }
+
+.header-link.active {
+    color: red;
+}
