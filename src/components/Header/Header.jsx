@@ -14,16 +14,16 @@ const Header = () => {
       </Link>
       <nav className="nav">
         <NavLink
-          to="/host"
+          to="host"
           className="header-link"
           // style={({ isActive }) => isActive ? activeLink : null}
         >
           Dashboard
         </NavLink>
-        <NavLink to="/about" className="header-link">
+        <NavLink to="about" className="header-link">
           About
         </NavLink>
-        <NavLink to="/vans" className="header-link">
+        <NavLink to="vans" className="header-link">
           Vans
         </NavLink>
       </nav>
