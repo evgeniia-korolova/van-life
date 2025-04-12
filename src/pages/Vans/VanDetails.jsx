@@ -3,7 +3,7 @@ import { useParams, Link, useLocation } from "react-router-dom";
 
 const VanDetails = () => {
   const params = useParams();
-  const location = useLocation()
+  const location = useLocation();
   console.log(location);
 
   const [van, setVan] = useState([]);
@@ -14,13 +14,15 @@ const VanDetails = () => {
       .then((data) => setVan(data.vans));
   }, [params.id]);
 
-  const search = location.state?.search || ''
-  
+  const search = location.state?.search || "";
+  const type = location.state?.type || 'all';
+
   return (
     <div className="van-detail-container">
       <Link to={`..${search}`} className="back-button" relative="path">
-        &larr; <span>Back to all vans</span>
+        &larr; <span>Back to {type} vans</span>
       </Link>
+     
 
       {van ? (
         <div className="van-detail">
