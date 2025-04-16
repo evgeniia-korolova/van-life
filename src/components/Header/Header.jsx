@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { NavLink, Link } from "react-router-dom";
+import avatarIcon from '../../assets/images/avatar-icon.png';
 
 const Header = () => {
   const activeLink = {
@@ -15,8 +16,7 @@ const Header = () => {
       <nav className="nav">
         <NavLink
           to="host"
-          className="header-link"
-          // style={({ isActive }) => isActive ? activeLink : null}
+          className="header-link"         
         >
           Dashboard
         </NavLink>
@@ -26,6 +26,13 @@ const Header = () => {
         <NavLink to="vans" className="header-link">
           Vans
         </NavLink>
+        <Link to="login" className="login-link">
+          <img 
+            src={avatarIcon}
+            alt=""
+            className="login-icon"
+          />
+        </Link>
       </nav>
     </div>
   );
