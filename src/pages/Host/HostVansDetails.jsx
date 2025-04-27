@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
+
+import { Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
 import { getHostVans } from "../../../api";
 import { requireAuth } from "../../../utils";
 
@@ -10,8 +10,7 @@ export async function loader({params, request}) {
 }
 const HostVansDetails = () => {
 const currentVan = useLoaderData()
-  // const [currentVan, setCurrentVan] = useState(null);
-  // const params = useParams();
+  
   const activeStyles = {
     color: "red",
   }; 

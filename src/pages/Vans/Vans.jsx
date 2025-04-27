@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import {
   Await,
   defer,
@@ -15,8 +15,7 @@ export function loader() {
 const Vans = () => {
   const dataPromise = useLoaderData();
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [error, setError] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();  
   const typeFilter = searchParams.get("type");
 
   // functional way to merge search params
@@ -31,11 +30,7 @@ const Vans = () => {
     });
   }
 
-  if (error) {
-    return (
-      <h1 className="loading-message">There was an error: {error.message}</h1>
-    );
-  }
+  
 
   function renderVanElements(vans) {
     const displayedVans = typeFilter
@@ -116,9 +111,9 @@ const Vans = () => {
   return (
     <div className="van-list-container">
       <h1>Explore our van options</h1>
-      <Await resolve={dataPromise.vans}>
-        {renderVanElements}
-      </Await>
+      <Suspense fallback={<h2>Loading vans ...</h2>}>
+        <Await resolve={dataPromise.vans}>{renderVanElements}</Await>
+      </Suspense>
     </div>
   );
 };
