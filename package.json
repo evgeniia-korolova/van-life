@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^11.6.1",
     "miragejs": "^0.1.48",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
